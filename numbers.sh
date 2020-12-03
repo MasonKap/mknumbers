@@ -2,14 +2,15 @@
 #this is a script called numbers.sh
 #By Mason Kaplan
 read -p 'Enter a positive number: ' number
-
-for i in $(seq 1 $number)
-do
-  out=$(( $i % 2 ))
+x=1
+while [ $number -ge $x ]
+  do
+  out=$(( $number % 2 ))
   if [ $out -eq 0 ]
   then
-    echo "$i Even"
+    echo "$number Even"
   else
-    echo "$i Odd"
+    echo "$number Odd"
   fi
+number=$(($number-1))
 done
